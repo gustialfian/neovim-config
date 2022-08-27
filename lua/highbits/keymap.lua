@@ -26,10 +26,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- lsp navigation
+-- lsp
 keymap("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<CR>", opts)
 keymap("n", "gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>", opts)
 keymap("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>", opts)
+keymap("n", "<leader>.", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- telescope
 keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
