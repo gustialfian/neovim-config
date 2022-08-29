@@ -33,4 +33,9 @@ return require('packer').startup(function(use)
             require("toggleterm").setup()
         end
     }
+
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 end)
