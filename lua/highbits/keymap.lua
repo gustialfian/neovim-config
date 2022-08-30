@@ -16,6 +16,9 @@ vim.g.mapleader = " "
 --   command_mode = "c",
 
 -- normal
+-- explorer
+keymap("n", "<leader>e", "<cmd>Ex<CR>", opts)
+
 -- buffer navigation
 keymap("n", "<leader><tab>", "<C-^>", opts) -- toggle between the current and the last buffer
 keymap("n", "<leader>bq", "<cmd>bdelete<CR>", opts) -- toggle between the current and the last buffer
@@ -33,8 +36,12 @@ keymap("n", "gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<C
 keymap("n", "<leader>.", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 
 -- telescope
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
-keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
+keymap("n", "<leader>ff",
+    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>"
+    , opts)
+keymap("n", "<leader>fb",
+    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ previewer = false }))<CR>"
+    , opts)
 keymap("n", "<leader>fo", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", opts)
 
 -- toggleterm
@@ -53,7 +60,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- Terminal --
 -- Better terminal navigation
 keymap('t', '<esc>', [[<C-\><C-n>]], term_opts)
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-h>", [[<C-\><C-N><C-w>h]], term_opts)
+keymap("t", "<C-j>", [[<C-\><C-N><C-w>j]], term_opts)
+keymap("t", "<C-k>", [[<C-\><C-N><C-w>k]], term_opts)
+keymap("t", "<C-l>", [[<C-\><C-N><C-w>l]], term_opts)
